@@ -86,11 +86,11 @@ jobs:
 
     # Change into the repository directory
     - name: Change Directory
-        working-directory: ./test-git-auto
+      working-directory: ./test-git-auto
 
     # # Change into the repository directory based on branch
     # - name: Change Directory
-    #     working-directory: ./${{github.base_ref}}
+    #   working-directory: ./${{github.base_ref}}
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
