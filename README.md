@@ -97,7 +97,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 0. Clone the repo
    ```sh
-   git clone
+   git clone git@github.com:derchrischkya/aws-infra.git
    ```
 1. Create a new branch
    ```sh
