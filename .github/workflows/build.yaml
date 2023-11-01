@@ -45,8 +45,9 @@
 name: 'Terraform'
 
 on:
-  # push:
-  #   branches: [ "dev", "prod" ]
+  workflow_dispatch:
+  push:
+    branches: [ "dev", "prod" ]
   pull_request:
     branches: [ "dev", "prod" ]
 
@@ -54,7 +55,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
     environment: ${{github.base_ref}}
