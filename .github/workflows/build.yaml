@@ -58,18 +58,18 @@ jobs:
   build:
     name: 'Terraform'
     runs-on: ubuntu-latest
-    environment: ./'${{github.base_ref}}'
+    environment: '${{github.base_ref}}'
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
-        working-directory: ./${{github.base_ref}}
+        working-directory: /${{github.base_ref}}
 
     env:
       TF_CLOUD_ORGANIZATION: "derchrischkya"
       TF_WORKSPACE: 'aws-infra-${{github.base_ref}}'
-      TERRAFORM_CLI_PATH: ./'${{github.base_ref}}'
+      TERRAFORM_CLI_PATH: '/${{github.base_ref}}'
 
     steps:
     # Checkout the repository to the GitHub Actions runner
