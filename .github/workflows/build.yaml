@@ -45,8 +45,9 @@
 name: 'Terraform'
 
 on:
-  # push:
-  #   branches: [ "dev", "prod" ]
+  workflow_dispatch:
+  push:
+    branches: [ "dev", "prod" ]
   pull_request:
     branches: [ "dev", "prod" ]
 
@@ -54,7 +55,7 @@ permissions:
   contents: read
 
 jobs:
-  terraform:
+  build:
     name: 'Terraform'
     runs-on: ubuntu-latest
     environment: ${{github.base_ref}}
@@ -63,6 +64,8 @@ jobs:
     defaults:
       run:
         shell: bash
+        working-directory: ./test-git-auto
+        #working-directory: ./${{github.base_ref}}
 
     steps:
     # Checkout the repository to the GitHub Actions runner
@@ -70,7 +73,7 @@ jobs:
       uses: actions/checkout@v3
 
     # Configure AWS Credentials for GitHub Actions
-   - name: Configure AWS Credentials Action For GitHub Actions
+    - name: Configure AWS Credentials Action For GitHub Actions
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
@@ -82,14 +85,6 @@ jobs:
       uses: hashicorp/setup-terraform@v2
       with:
         terraform_version: "1.1.7"
-
-    # Change into the repository directory
-    - name: Change Directory
-        working-directory: ./test-git-auto
-
-    # # Change into the repository directory based on branch
-    # - name: Change Directory
-    #     working-directory: ./${{github.base_ref}}
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
