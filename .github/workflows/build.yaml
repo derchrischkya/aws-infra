@@ -45,9 +45,9 @@
 name: 'Terraform'
 
 on:
-  workflow_dispatch:
-  push:
-    branches: [ "dev", "prod" ]
+  # workflow_dispatch:
+  # push:
+  #   branches: [ "dev", "prod" ]
   pull_request:
     branches: [ "dev", "prod" ]
 
@@ -64,31 +64,29 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./test-git-auto
-        #working-directory: ./${{github.base_ref}}
+        working-directory: ./${{github.base_ref}}
 
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v3
 
-    # Configure AWS Credentials for GitHub Actions
-    - name: Configure AWS Credentials Action For GitHub Actions
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: '${{ secrets.AWS_ACCESS_KEY }}'
-        aws-secret-access-key: '${{ secrets.AWS_SECRET_ACCESS_KEY }}'
-        aws-region: us-east-1
-
-    # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v2
+      uses: hashicorp/setup-terraform@v1
       with:
-        terraform_version: "1.1.7"
+        cli_config_credentials_token: '${{ secrets.TF_API_TOKEN }}'
+
+    # - name: Terraform Format
+    #   id: fmt
+    #   run: terraform fmt -check
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform init
+      run: terraform init 
+
+    # - name: Terraform Validate
+    #   id: validate
+    #   run: terraform validate -no-color
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
