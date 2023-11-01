@@ -64,8 +64,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./test-git-auto
-        #working-directory: ./${{github.base_ref}}
+        working-directory: ./${{github.base_ref}}
 
     steps:
     # Checkout the repository to the GitHub Actions runner
