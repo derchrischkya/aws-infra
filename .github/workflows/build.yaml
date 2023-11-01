@@ -54,7 +54,7 @@ permissions:
   contents: read
 
 jobs:
-  terraform:
+  build:
     name: 'Terraform'
     runs-on: ubuntu-latest
     environment: ${{github.base_ref}}
