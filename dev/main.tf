@@ -2,6 +2,15 @@ provider "aws" {
   region  = "us-east-1"
 }
 
+terraform {
+  backend "remote" {
+    organization = "derchrischkya"
+    workspaces {
+      name = "aws-infra-dev"
+    }
+  }
+}
+
 module "root-module" {
   source = "../modules/root"
   ### VPC ### 

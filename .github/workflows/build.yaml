@@ -66,11 +66,6 @@ jobs:
         shell: bash
         working-directory: ./${{github.base_ref}}
 
-    env:
-      TF_CLOUD_ORGANIZATION: "derchrischkya"
-      TF_WORKSPACE: 'aws-infra-dev'
-      # TERRAFORM_CLI_PATH: '/${{github.base_ref}}'
-
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
