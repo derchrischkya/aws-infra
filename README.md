@@ -7,3 +7,4 @@ Involves terraform scripts to spin up our ACloudGuru AWS environment required fo
 
 ## Resources
 - EKS cluster --> https://medium.com/cloud-native-daily/provision-amazon-eks-cluster-using-terraform-modules-16680794fbae
+- 
