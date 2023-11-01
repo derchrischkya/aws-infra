@@ -72,6 +72,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
+
+    - name: Uncomment Terraform Cloud Backend Configuration file
+      id: uncomment
+      run: sed -i 's/^#*//' backend.tf
+      working-directory: ./modules/root
+
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
       with:
@@ -87,7 +93,7 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform init
+      run: terraform init -backend-config='${{github.base_ref}}'.hcl
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
