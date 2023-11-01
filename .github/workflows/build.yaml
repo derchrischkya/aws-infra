@@ -69,6 +69,7 @@ jobs:
     env:
       TF_CLOUD_ORGANIZATION: "derchrischkya"
       TF_WORKSPACE: 'aws-infra-${{github.base_ref}}'
+      TERRAFORM_CLI_PATH: ./'${{github.base_ref}}'
 
     steps:
     # Checkout the repository to the GitHub Actions runner
