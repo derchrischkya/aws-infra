@@ -1,12 +1,11 @@
 <a name="readme-top"></a>
-[terraform]: https://img.shields.io/badge/Terraform-623CE4?style=for-the-badge&logo=terraform&logoColor=white#readme-top
-[terraform-url]: https://www.terraform.io/
-[terraform.io]: https://img.shields.io/badge/Terraform_Cloud-623CE4?style=for-the-badge&logo=terraform&logoColor=white#readme-top
-[Terraform Cloud-url]: https://www.terraform.io/docs/cloud/index.html
-[github-actions]: https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white#readme-top
-[github-actions-url]: https://docs.github.com/en/actions
-[aws]: https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white#readme-top
-[aws-url]: https://aws.amazon.com/
+![terraform](https://img.shields.io/badge/Terraform-623CE4?style=for-the-badge&logo=terraform&logoColor=white#readme-top)
+![terraform.io](https://img.shields.io/badge/Terraform_Cloud-623CE4?style=for-the-badge&logo=terraform&logoColor=white#readme-top)
+![github-actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white#readme-top)
+![aws](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white#readme-top)
+![eks](https://img.shields.io/badge/EKS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white#readme-top)
+![vpc](https://img.shields.io/badge/VPC-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white#readme-top)
+
 
 <br />
 <div align="center">
@@ -65,10 +64,6 @@ For the Github action workflow the following secrets are required:
 - `AWS_ACCESS_KEY_ID` stored in Terraform Cloud as environment variable
 - `AWS_SECRET_ACCESS_KEY` stored in Terraform Cloud as environment variable "AWS_SECRET_ACCESS_KEY"
 - `TF_API_TOKEN` stored in GitHub as secret
-
-Find more about Terraform Cloud here: https://www.terraform.io/docs/cloud/index.html
-Find more about Github Actions here: https://docs.github.com/en/actions
-Find more about Terraform here: https://www.terraform.io/docs/index.html
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
