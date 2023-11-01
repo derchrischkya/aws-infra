@@ -1,6 +1,7 @@
 provider "aws" {
   #profile = "acloudguru-dev"
   region  = "us-east-1"
+  source_profile = default
 }
 
 resource "aws_instance" "example" {
@@ -16,7 +17,7 @@ terraform {
       name = "ACloudGuru-AWS-Deployment"
     }
   }
-  
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"

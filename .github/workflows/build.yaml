@@ -67,20 +67,11 @@ jobs:
         working-directory: ./test-git-auto
         #working-directory: ./${{github.base_ref}}
 
+
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v3
-
-    - name: Uncomment Terraform Cloud Backend Configuration file
-      id: uncomment
-      run: sed -i 's/^#*//' provider.tf
-      working-directory: ./modules/root
-
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v1
-      with:
-        cli_config_credentials_token: '${{ secrets.TF_API_TOKEN }}'
 
     # Configure AWS Credentials for GitHub Actions
     - name: Configure AWS Credentials Action For GitHub Actions
@@ -93,6 +84,10 @@ jobs:
     - name: Print
       run: echo '${{ secrets.AWS_SECRET_ACCESS_KEY }}'
 
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
+      with:
+        cli_config_credentials_token: '${{ secrets.TF_API_TOKEN }}'
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
