@@ -11,7 +11,6 @@ terraform {
 }
 
 provider "aws" {
-  profile = "acloudguru-dev"
   region  = "us-east-1"
 }
 
