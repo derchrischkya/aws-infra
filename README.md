@@ -69,10 +69,10 @@ For the Github action workflow the following secrets are required:
 
 
 ### Built With
-* [![Terraform][terraform]][terraform-url]
-* [![Terraform Cloud][terraform.io]][Terraform Cloud-url]
-* [![Github Actions][github-actions]][github-actions-url]
-* [![AWS][aws]][aws-url]
+* Terraform
+* Terraform Cloud
+* Github Actions
+* AWS
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
