@@ -88,6 +88,10 @@ To get started just run the Github Action workflow by creating a merge request t
 
 - cloned repository
 - terraform cloud account
+  - terraform cloud organization
+  - terraform cloud workspace (aws-infra-dev, aws-infra-prod)
+  - define Terraform Working Directory: "/dev" or "/prod"
+  - store AWS access key and secret as environment variables
 - aws account
 - github account
 
