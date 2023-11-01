@@ -1,7 +1,6 @@
 provider "aws" {
-  #profile = "acloudguru-dev"
+  profile = "default"
   region  = "us-east-1"
-  source_profile = default
 }
 
 resource "aws_instance" "example" {
