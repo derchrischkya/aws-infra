@@ -1,17 +1,14 @@
-terraform {
-  backend "remote" {
-    # The name of your Terraform Cloud organization.
-    organization = "derchrischkya"
-
-    # The name of the Terraform Cloud workspace to store Terraform state files in.
-    workspaces {
-      name = "ACloudGuru-AWS-Deployment"
-    }
-  }
-}
-
 provider "aws" {
   region  = "us-east-1"
+}
+
+terraform {
+  backend "remote" {
+    organization = "derchrischkya"
+    workspaces {
+      name = "aws-infra-dev"
+    }
+  }
 }
 
 module "root-module" {

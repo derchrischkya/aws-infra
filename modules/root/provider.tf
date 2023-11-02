@@ -3,7 +3,7 @@ terraform {
   backend "remote" {
     organization = "derchrischkya"
     workspaces {
-      name = "ACloudGuru-AWS-Deployment"
+      name = "AWS-INFRA-DEV"
     }
   }
   required_providers {
