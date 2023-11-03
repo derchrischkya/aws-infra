@@ -14,17 +14,17 @@ module "eks" {
   enable_irsa = var.enable_irsa
 
 
-  cluster_addons = {
-    coredns = {
-      most_recent = true
-    }
-    kube-proxy = {
-      most_recent = true
-    }
-    vpc-cni = {
-      most_recent = true
-    }
-  }
+  # cluster_addons = {
+  #   coredns = {
+  #     most_recent = true
+  #   }
+  #   kube-proxy = {
+  #     most_recent = true
+  #   }
+  #   vpc-cni = {
+  #     most_recent = true
+  #   }
+  # }
 
   eks_managed_node_group_defaults = {
     disk_size = 30
@@ -58,13 +58,13 @@ module "eks" {
       #     value  = "spot"
       #     effect = "NO_SCHEDULE"
       #   }]
-      # taints = {
-      #   dedicated = {
-      #     key    = "dedicated"
-      #     value  = "spot"
-      #     effect = "NO_SCHEDULE"
-      #   }
-      # }
+      taints = {
+        dedicated = {
+          key    = "dedicated"
+          value  = "spot"
+          effect = "NO_SCHEDULE"
+        }
+      }
       instance_types = ["t3.micro"]
       capacity_type  = "SPOT"
     }
