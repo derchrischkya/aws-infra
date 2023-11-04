@@ -40,7 +40,7 @@ module "eks" {
         role = "general"
       }
 
-      instance_types = ["t3.micro"]
+      instance_types = ["t3.large"]
       capacity_type  = "ON_DEMAND"
     }
 
@@ -65,7 +65,7 @@ module "eks" {
           effect = "NO_SCHEDULE"
         }
       }
-      instance_types = ["t3.micro"]
+      instance_types = ["t3.large"]
       capacity_type  = "SPOT"
     }
   }
