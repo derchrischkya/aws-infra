@@ -14,23 +14,23 @@ module "eks" {
   enable_irsa = var.enable_irsa
 
 
-  cluster_addons = {
-    coredns = {
-      most_recent = true
-    }
-    kube-proxy = {
-      most_recent = true
-    }
-    vpc-cni = {
-      most_recent = true
-    }
-    ebs-csi-controller = {
-      most_recent = true
-    }
-  }
+  # cluster_addons = {
+  #   coredns = {
+  #     most_recent = true
+  #   }
+  #   kube-proxy = {
+  #     most_recent = true
+  #   }
+  #   vpc-cni = {
+  #     most_recent = true
+  #   }
+  #   ebs-csi-controller = {
+  #     most_recent = true
+  #   }
+  # }
 
   eks_managed_node_group_defaults = {
-    disk_size = 30
+    vpc_security_group_ids = [aws_security_group.eks.id]
   }
 
   eks_managed_node_groups = {

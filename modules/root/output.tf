@@ -75,3 +75,8 @@ output "cluster_tls_certificate_sha1_fingerprint" {
   description = "The SHA1 fingerprint of the public key of the cluster's certificate"
   value       = module.eks.cluster_tls_certificate_sha1_fingerprint
 }
+
+output "efs_mount_id" {
+  description = "The id of the mount efs created"
+  value       = resource.efs.aws_efs_file_system.kube.id
+}
