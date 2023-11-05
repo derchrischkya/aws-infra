@@ -8,7 +8,7 @@ resource "aws_security_group" "efs" {
     from_port        = 2049
     to_port          = 2049
     protocol         = "TCP"
-    cidr_blocks      = [module.vpc.cidr]
+    cidr_blocks      = [module.vpc.vpc_cidr_block]
   }
 }
 
