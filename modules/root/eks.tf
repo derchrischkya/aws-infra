@@ -30,7 +30,8 @@ module "eks" {
   # }
 
   eks_managed_node_group_defaults = {
-    vpc_security_group_ids = [aws_security_group.eks.id]
+    disk_size = 30
+    vpc_security_group_ids = [module.efs.aws_security_group_efs_id]
   }
 
   eks_managed_node_groups = {

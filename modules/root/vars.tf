@@ -88,3 +88,10 @@ variable "eks_tags" {
     Environment = "dev"
   }
 }
+
+###### EFS Varaibles defined #######
+#tbd - add efs variables
+
+
+
+

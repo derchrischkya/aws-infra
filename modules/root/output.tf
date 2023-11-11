@@ -15,6 +15,11 @@ output "private_subnets" {
   description = "VPC private subnets' IDs list"
 }
 
+output "private_subnets_cidr_blocks" {
+  value      = module.vpc.private_subnets_cidr_blocks
+  description = "value of private subnets cidr blocks"
+}
+
 ################################################################################
 # Cluster
 ################################################################################
@@ -76,7 +81,12 @@ output "cluster_tls_certificate_sha1_fingerprint" {
   value       = module.eks.cluster_tls_certificate_sha1_fingerprint
 }
 
-output "efs_mount_id" {
-  description = "The id of the mount efs created"
-  value       = resource.efs.aws_efs_file_system.kube.id
+output "efs_id" {
+  description = "ID of the created EFS file system."
+  value       = module.efs.efs_id
+}
+
+output "efs_dns_name" {
+  description = "DNS name of the created EFS file system."
+  value       = module.efs.efs_dns_name
 }

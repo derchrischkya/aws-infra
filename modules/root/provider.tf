@@ -1,11 +1,5 @@
 terraform {
 //Do not uncomment this file. This file will be uncommented only in Github Actions
-  backend "remote" {
-    organization = "derchrischkya"
-    workspaces {
-      name = "AWS-INFRA-DEV"
-    }
-  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
