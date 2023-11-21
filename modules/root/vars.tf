@@ -109,7 +109,6 @@ variable "prometheus_password" {
 variable "loki_username" {
   type        = string
   description = "The username for Loki"
-  
 }
 
 variable "loki_url" {
