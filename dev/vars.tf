@@ -1,10 +1,22 @@
-variable "prometheus_username" {}
+variable "prometheus_username" {
+  type        = string
+  description = "The username for Prometheus"
+}
 
-variable "prometheus_password" {}
+variable "prometheus_password" {
+  type        = string
+  description = "The password for Prometheus"
+}
 
-variable "loki_username" {}
+variable "loki_username" {
+  type        = string
+  description = "The username for Loki"
+}
 
-variable "loki_password" {}
+variable "loki_password" {
+  type        = string
+  description = "The password for Loki"
+}
 
 variable "AWS_ACCESS_KEY_ID" {}
 
