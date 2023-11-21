@@ -1,25 +1,25 @@
 variable "prometheus_username" {
   type        = string
   description = "The username for Prometheus"
-  default     = ""
+  default = ""
 }
 
 variable "prometheus_password" {
   type        = string
   description = "The password for Prometheus"
-  default     = ""
+  default = ""
 }
 
 variable "loki_username" {
   type        = string
   description = "The username for Loki"
-  default     = ""
+  default = ""
 }
 
 variable "loki_password" {
   type        = string
   description = "The password for Loki"
-  default     = ""
+  default = ""
 }
 
 variable "AWS_ACCESS_KEY_ID" {}
