@@ -75,10 +75,11 @@ jobs:
       uses: hashicorp/setup-terraform@v1
       with:
         cli_config_credentials_token: '${{ secrets.TF_API_TOKEN }}'
-
-    # - name: Terraform Format
-    #   id: fmt
-    #   run: terraform fmt -check
+        terraform_wrapper: false
+    
+    - name: Terraform Format
+      id: fmt
+      run: terraform fmt -check
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
