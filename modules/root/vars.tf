@@ -93,6 +93,7 @@ variable "eks_tags" {
 variable "prometheus_username" {
   type        = string
   description = "The username for Prometheus"
+  default = ""
 }
 
 variable "prometheus_url" {
@@ -104,11 +105,13 @@ variable "prometheus_url" {
 variable "prometheus_password" {
   type        = string
   description = "The password for Prometheus"
+  default = ""
 }
 
 variable "loki_username" {
   type        = string
   description = "The username for Loki"
+  default = ""
 }
 
 variable "loki_url" {
@@ -120,4 +123,5 @@ variable "loki_url" {
 variable "loki_password" {
   type        = string
   description = "The password for Loki"
+  default = ""
 }
