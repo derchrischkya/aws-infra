@@ -14,20 +14,24 @@ module "eks" {
   enable_irsa = var.enable_irsa
 
 
-  cluster_addons = {
-    coredns = {
-      most_recent = true
-    }
-    kube-proxy = {
-      most_recent = true
-    }
-    vpc-cni = {
-      most_recent = true
-    }
-  }
+  # cluster_addons = {
+  #   coredns = {
+  #     most_recent = true
+  #   }
+  #   kube-proxy = {
+  #     most_recent = true
+  #   }
+  #   vpc-cni = {
+  #     most_recent = true
+  #   }
+  #   ebs-csi-controller = {
+  #     most_recent = true
+  #   }
+  # }
 
   eks_managed_node_group_defaults = {
     disk_size = 30
+    vpc_security_group_ids = [module.efs.aws_security_group_efs_id]
   }
 
   eks_managed_node_groups = {
@@ -40,7 +44,7 @@ module "eks" {
         role = "general"
       }
 
-      instance_types = ["t3.micro"]
+      instance_types = ["t3.medium"]
       capacity_type  = "ON_DEMAND"
     }
 
@@ -65,7 +69,7 @@ module "eks" {
           effect = "NO_SCHEDULE"
         }
       }
-      instance_types = ["t3.micro"]
+      instance_types = ["t3.medium"]
       capacity_type  = "SPOT"
     }
   }
