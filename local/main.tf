@@ -17,10 +17,10 @@ module "root-module" {
   cluster_endpoint_public_access  = true
 
   ### Grafana ###
-  prometheus_password = "${var.prometheus_password}"
-  prometheus_username = "${var.prometheus_username}"
-  loki_password       = "${var.loki_password}"
-  loki_username       = "${var.loki_username}"
+  prometheus_password = var.prometheus_password
+  prometheus_username = var.prometheus_username
+  loki_password       = var.loki_password
+  loki_username       = var.loki_username
   #prometheus_url = 
   #loki_url = 
 }
