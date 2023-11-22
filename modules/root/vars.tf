@@ -105,13 +105,11 @@ variable "prometheus_url" {
 variable "prometheus_password" {
   type        = string
   description = "The password for Prometheus"
-  default = ""
 }
 
 variable "loki_username" {
   type        = string
   description = "The username for Loki"
-  default = ""
 }
 
 variable "loki_url" {
@@ -123,5 +121,4 @@ variable "loki_url" {
 variable "loki_password" {
   type        = string
   description = "The password for Loki"
-  default = ""
 }
