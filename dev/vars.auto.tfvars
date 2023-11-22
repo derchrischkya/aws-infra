@@ -1,4 +1,4 @@
-prometheus_password = "test"
-prometheus_username = "test"
-loki_password = "test"
-loki_username = "test"
+prometheus_password = "test123"
+prometheus_username = "test123"
+loki_password = "test123"
+loki_username = "test123"
