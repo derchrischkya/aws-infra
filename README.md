@@ -62,6 +62,10 @@ Terraform is automatically executed by Github Actions, when a merge request is c
 For the Github action workflow the following secrets are required:
 - `AWS_ACCESS_KEY_ID` stored in Terraform Cloud as environment variable
 - `AWS_SECRET_ACCESS_KEY` stored in Terraform Cloud as environment variable "AWS_SECRET_ACCESS_KEY"
+- `loki_password` strored in Terraform Cloud as environment variable
+- `loki_username` stored in Terraform Cloud as environment variable
+- `prometheus_password` stored in Terraform Cloud as environment variable
+- `prometheus_username` stored in Terraform Cloud as environment variable
 - `TF_API_TOKEN` stored in GitHub as secret
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
