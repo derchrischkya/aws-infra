@@ -4,10 +4,10 @@ resource "helm_release" "efs_csi_driver" {
   chart      = "aws-efs-csi-driver"
   namespace  = "kube-system"
 
-  # set {
-  #   name    = "controller.serviceAccount.name"
-  #   value   = "efs-csi-controller-sa"
-  # }
+  set {
+    name    = "controller.serviceAccount.name"
+    value   = "efs-csi-controller-sa"
+  }
 
   # set {
   #   name = "controller.serviceAccount.create"
