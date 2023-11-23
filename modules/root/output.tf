@@ -90,3 +90,8 @@ output "efs_dns_name" {
   description = "DNS name of the created EFS file system."
   value       = module.efs.efs_dns_name
 }
+
+output "efs_role_arn" {
+  description = "ARN of the IAM role created for the EFS CSI driver."
+  value       = module.efs.efs_role_arn
+}
