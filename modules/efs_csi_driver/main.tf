@@ -4,18 +4,9 @@ resource "helm_release" "efs_csi_driver" {
   chart      = "aws-efs-csi-driver"
   namespace  = "kube-system"
 
-  set {
-    name    = "controller.serviceAccount.name"
-    value   = "efs-csi-controller-sa"
-  }
 
   set {
-    name = "controller.serviceAccount.create"
-    value = "true"
+    name = "controller.serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
+    value = var.service_account_role_arn
   }
-
-  # set {
-  #   name = "controller.serviceAccount.annotations.eks.amazonaws.com/role-arn"
-  #   value = var.service_account_role_arn
-  # }
 }
