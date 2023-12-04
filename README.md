@@ -9,18 +9,18 @@
 
 <br />
 <div align="center">
-  <h3 align="center">AWS-INFRA</h3>
+  <h3 align="center">aws-k8s</h3>
 
   <p align="center">
     An awesome README template to jumpstart your projects!
     <br />
-    <a href="https://github.com/derchrischkya/aws-infra"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/derchrischkya/aws-k8s"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     ·
-    <a href="https://github.com/derchrischkya/aws-infra/issues">Report Bug</a>
+    <a href="https://github.com/derchrischkya/aws-k8s/issues">Report Bug</a>
     ·
-    <a href="https://github.com/derchrischkya/aws-infra/issues">Request Feature</a>
+    <a href="https://github.com/derchrischkya/aws-k8s/issues">Request Feature</a>
   </p>
 </div>
 
@@ -93,7 +93,7 @@ To get started just run the Github Action workflow by creating a merge request t
 - cloned repository
 - terraform cloud account
   - terraform cloud organization
-  - terraform cloud workspace (aws-infra-dev, aws-infra-prod)
+  - terraform cloud workspace (aws-k8s-dev, aws-k8s-prod)
   - define Terraform Working Directory: "/dev" or "/prod"
   - store AWS access key and secret as environment variables
 - aws account
@@ -105,7 +105,7 @@ _Below is an example of how you can instruct your audience on installing and set
 
 0. Clone the repo
    ```sh
-   git clone git@github.com:derchrischkya/aws-infra.git
+   git clone git@github.com:derchrischkya/aws-k8s.git
    ```
 1. Create a new branch
    ```sh
@@ -148,7 +148,7 @@ The project can be used to create a basic infrastructure in AWS. The following r
 - [x] Create VPC
 - [x] Create EKS Cluster
 
-See the [open issues](https://github.com/derchrischkya/aws-infra/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/derchrischkya/aws-k8s/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -175,7 +175,7 @@ Don't forget to give the project a star! Thanks again!
 
 Christoph Richter  - christoph.richter1997@gmail.com
 
-Project Link: [https://github.com/derchrischkya/aws-infra](https://github.com/derchrischkya/aws-infra)
+Project Link: [https://github.com/derchrischkya/aws-k8s](https://github.com/derchrischkya/aws-k8s)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

@@ -6,7 +6,7 @@ terraform {
   backend "remote" {
     organization = "derchrischkya"
     workspaces {
-      name = "aws-infra-dev"
+      name = "aws-k8s-dev"
     }
   }
 }
