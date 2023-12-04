@@ -1,25 +1,11 @@
 provider "aws" {
   region  = "us-east-1"
-}
-
-terraform {
-  backend "remote" {
-    organization = "derchrischkya"
-    workspaces {
-      name = "aws-infra-dev"
-    }
-  }
-}
-
-locals {
-  prometheus_password = var.prometheus_password
-  prometheus_username = var.prometheus_username
-  loki_password       = var.loki_password
-  loki_username       = var.loki_username
+  profile = "acloudguru-dev"
 }
 
 module "root-module" {
   source = "../modules/root"
+
   ### VPC ### 
   vpc_name           = "eks-terraform-vpc"
   enable_nat_gateway = true

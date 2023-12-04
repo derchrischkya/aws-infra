@@ -46,7 +46,9 @@ name: 'Terraform'
 
 on:
   workflow_dispatch:
-  push:
+  # push:
+  #   branches: [ "dev", "prod" ]
+  pull_request:
     branches: [ "dev", "prod" ]
 
 permissions:
@@ -56,43 +58,39 @@ jobs:
   build:
     name: 'Terraform'
     runs-on: ubuntu-latest
-    environment: '${{github.base_ref}}'
+    environment: ${{github.base_ref}}
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
-        working-directory: ./test-git-auto
-        #working-directory: ./${{github.base_ref}}
+        working-directory: ./${{github.base_ref}}
 
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v3
 
-    # Configure AWS Credentials for GitHub Actions
-    - name: Configure AWS Credentials Action For GitHub Actions
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: '${{ secrets.AWS_ACCESS_KEY }}'
-        aws-secret-access-key: '${{ secrets.AWS_SECRET_ACCESS_KEY }}'
-        aws-region: us-east-1
-
-    # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
       with:
-        terraform_version: "1.1.7"
+        cli_config_credentials_token: '${{ secrets.TF_API_TOKEN }}'
+        terraform_wrapper: false
+    
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform init
+      run: terraform init -input=false
+
+    # - name: Terraform Validate
+    #   id: validate
+    #   run: terraform validate -no-color
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      run: terraform plan -input=false
+      run: terraform plan
 
       # On push to "prod", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
-      run: terraform apply -auto-approve -input=false
+      run: terraform apply -auto-approve

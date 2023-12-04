@@ -88,3 +88,37 @@ variable "eks_tags" {
     Environment = "dev"
   }
 }
+
+##### Grafana Variables defined #######
+variable "prometheus_username" {
+  type        = string
+  description = "The username for Prometheus"
+  default = ""
+}
+
+variable "prometheus_url" {
+  type        = string
+  description = "The url for Prometheus"
+  default = "https://prometheus-prod-24-prod-eu-west-2.grafana.net"
+}
+
+variable "prometheus_password" {
+  type        = string
+  description = "The password for Prometheus"
+}
+
+variable "loki_username" {
+  type        = string
+  description = "The username for Loki"
+}
+
+variable "loki_url" {
+  type        = string
+  description = "The url for Loki"
+  default = "https://logs-prod-012.grafana.net"
+}
+
+variable "loki_password" {
+  type        = string
+  description = "The password for Loki"
+}
